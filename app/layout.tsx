@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
@@ -161,11 +163,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout({ children, }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html
       lang="en"
@@ -174,18 +175,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <div className="flex flex-col">
           <Navbar />
-          <div className="flex flex-row relative h-[calc(100vh-4rem)] max-h-[calc(100vh-4rem)] min-h-[calc(100vh-4rem)] overflow-hidden">
-
-            <SidebarProvider className="">
-              <SideBar />
-            </SidebarProvider>
-            <div className=" flex flex-1 flex-col  h-[calc(100vh-4rem)] max-h-[calc(100vh-4rem)] min-h-[calc(100vh-4rem)] overflow-hidden mt-12">
-              <BreadcrumbBar />
-              <Separator className='mt-2' />
-              {children}
-            </div>
-          </div>
-
+          {children}
         </div>
       </body>
     </html>

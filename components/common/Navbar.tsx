@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Menu, Search, Moon, Bookmark, FolderCode } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import {  Toggle } from "@base-ui/react"
+import { Toggle } from "@base-ui/react"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
 export function Navbar() {
@@ -24,15 +24,15 @@ export function Navbar() {
 
                 {/* Action Button */}
                 <div className="flex flex-row">
-                <div className="hidden md:flex items-center gap-4">
-                    <Button variant="outline"  className="text-muted-foreground"size="sm"> 
-                        <Search  /> Search <kbd>ctrlK</kbd>
-                    </Button>
-                    <Toggle>
-                        <Moon />
-                    </Toggle>
-                    <Toggle>
-                        <Bookmark />
+                    <div className="hidden md:flex items-center gap-4">
+                        <Button variant="outline" className="text-muted-foreground" size="sm">
+                            <Search /> Search <kbd>ctrlK</kbd>
+                        </Button>
+                        <Toggle>
+                            <Moon />
+                        </Toggle>
+                        <Toggle>
+                            <Bookmark />
                         </Toggle>
                         <Avatar>
                             <AvatarImage
@@ -42,16 +42,18 @@ export function Navbar() {
                             />
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
-                </div>
-                 
+                    </div>
+
                 </div>
                 {/* Mobile Menu Trigger */}
                 <Sheet>
-                    <SheetTrigger  className="md:hidden">
+                    <SheetTrigger className="md:hidden" render={
                         <Button variant="outline" size="icon">
                             <Menu className="h-5 w-5" />
                             <span className="sr-only">Toggle menu</span>
-                        </Button>
+                        </Button>}
+                    >
+
                     </SheetTrigger>
                     <SheetContent side="left">
                         <div className="flex flex-col gap-6 py-6">
